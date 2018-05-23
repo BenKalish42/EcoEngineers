@@ -18,13 +18,13 @@ function main(){
 
 		if(items.indexOf(query) != -1) {
 			// we have the item they searched for, so navigate to page
-			window.location.href = "items/" + query +  ".html";
+			window.location.href = "item.html?item=" + query;
 		} else {
 			// Have bootstrap modal pop up
 			$('#invalidSearchModal').modal('show');
 		}
 
-	})
+	});
 
 	console.log('hello');
 }
