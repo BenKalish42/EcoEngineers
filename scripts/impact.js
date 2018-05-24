@@ -78,7 +78,7 @@ function main() {
 		  	title: "Years"
 		  },
 		  yaxis: {
-		  	title: "lbs CO2 Emitted"
+		  	title: "Total lbs CO2 Emitted to date"
 		  }
 		};
 
