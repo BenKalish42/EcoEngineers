@@ -19,6 +19,8 @@
     <!-- Custom styles for this template -->
     <link href="css/heroic-features.css" rel="stylesheet">
 
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
   </head>
 
   <body>
@@ -48,21 +50,53 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container" id="itemPage">
+    <div class="container" id="impactPage">
 
       <!-- Jumbotron Header -->
       <header class="jumbotron my-4">
-        <h1 class="display-3">{{ name }}: <span v-if="recyclable" style="color: #28a745">RECYCLABLE</span><span v-else style="color: #ff0000">GARBAGE</span></h1>
+        <h1 class="display-3">Making An Impact</h1>
+        <p class="lead">Calculate how much you can lower your emissions over 4 years by recycling some common items.</p>
       </header>
 
       <header class="jumbotron my-4">
-        <h1 class="display-4">Where To Recycle</h1>
-        <p class="lead">{{ where }}</p>
+        <form id="calculateForm"> 
+
+          <label for="numPeople">How many people do you live with including yourself?</label>
+          <select class="form-control" id="numPeople">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+
+          <label for="numYears">How many years do you have left at Northwestern?</label>
+          <select class="form-control" id="numYears">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <div id="recyclableItems">
+            <label>Which of the following do you or will you recycle?</label>
+            <label class="checkbox"><input type="checkbox" value="cans">Aluminum Cans</label>
+            <label class="checkbox"><input type="checkbox" value="plastic">Plastic</label>
+            <label class="checkbox"><input type="checkbox" value="glass">Glass</label>
+            <label class="checkbox"><input type="checkbox" value="newspaper">Newspaper</label>
+            <label class="checkbox"><input type="checkbox" value="magazines">Magazines</label>
+          </div>
+
+          <button class="btn btn-success">Calculate</button>
+        </form>
+
       </header>
 
       <header class="jumbotron my-4">
-        <h1 class="display-4">Facts About Aluminum Cans</h1>
-        <p class="lead">{{ facts }}</p>
+        <h1 class="display-3">Results</h1>
+        <p class="lead" v-if="calculated">By recycling what you've selected, you'd be emitting {{ amount }} less pounds of CO2 than average over the years you have left here. That's about {{ percent }}% less than the average household of your size.</p>
+        <p class="lead" v-else>Please enter your information above and press "Calculate" to view results.</p>
+        <div id="emissionsChart"></div>
       </header>
 
       
@@ -83,7 +117,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src = "scripts/item.js"></script>
+    <script src = "scripts/impact.js"></script>
 
 
 
