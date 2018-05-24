@@ -11,6 +11,8 @@ function main() {
 
 	const epy = 692.0
 
+	var plotted = false;
+
 	$("#calculateForm").submit(function(event){
 
 		event.preventDefault();
@@ -71,10 +73,22 @@ function main() {
 		var data = [trace1, trace2];
 
 		var layout = {
-		  title:'Your Emissions At Northwestern'
+		  title:'Your CO2 Emissions At Northwestern',
+		  xaxis: {
+		  	title: "Years"
+		  },
+		  yaxis: {
+		  	title: "lbs CO2 Emitted"
+		  }
 		};
 
-		Plotly.newPlot('emissionsChart', data, layout);
+		if(plotted){
+			Plotly.react('emissionsChart', data, layout);
+		} else{
+			Plotly.newPlot('emissionsChart', data, layout);
+		}
+
+		plotted = true;
 
 	});
 
