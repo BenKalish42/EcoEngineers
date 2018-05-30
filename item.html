@@ -52,7 +52,11 @@
 
       <!-- Jumbotron Header -->
       <header class="jumbotron my-4">
-        <h1 class="display-3">{{ name }}: <span v-if="recyclable" style="color: #28a745">RECYCLABLE</span><span v-else style="color: #ff0000">GARBAGE</span></h1>
+        <h1 class="display-3">{{ name }}: 
+          <span v-if="special" style="color: #ffbb33">SPECIAL</span>
+          <span v-else-if="recyclable" style="color: #28a745">RECYCLABLE</span>
+          <span v-else style="color: #ff0000">GARBAGE</span>
+        </h1>
       </header>
 
       <header class="jumbotron my-4">
@@ -61,7 +65,7 @@
       </header>
 
       <header class="jumbotron my-4">
-        <h1 class="display-4">Facts About Aluminum Cans</h1>
+        <h1 class="display-4">Facts About {{ name }}</h1>
         <p class="lead">{{ facts }}</p>
       </header>
 
@@ -83,6 +87,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src = "scripts/itemsdata.js"></script>
     <script src = "scripts/item.js"></script>
 
 

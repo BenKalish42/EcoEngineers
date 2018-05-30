@@ -88,32 +88,5 @@ function itemPage(id){
 	window.location.href = "item.html?item=" + id;
 }
 
-var items_data = [
-	{
-		"id": "can",
-		"name": "Aluminum Cans",
-		"recyclable": true,
-		"special": false,
-		"where": "Aluminum cans can be recycled in any regular blue-colored recycling bin.",
-		"facts": "Americans throw away over $1 billion worth of aluminum cans every year. Discarded aluminum is more valuable than any other item in a recycling bin. Aluminum cans are 100% recyclable."
-	},
-	{
-		"id": "solocup",
-		"name": "Solo Cups",
-		"recyclable": false,
-		"special": false,
-		"where": "Aluminum cans can be recycled in any regular blue-colored recycling bin.",
-		"facts": "Americans throw away over $1 billion worth of aluminum cans every year. Discarded aluminum is more valuable than any other item in a recycling bin. Aluminum cans are 100% recyclable."
-	},
-	{
-		"id": "battery",
-		"name": "Batteries",
-		"recyclable": false,
-		"special": true,
-		"where": "Aluminum cans can be recycled in any regular blue-colored recycling bin.",
-		"facts": "Americans throw away over $1 billion worth of aluminum cans every year. Discarded aluminum is more valuable than any other item in a recycling bin. Aluminum cans are 100% recyclable."
-	},
-
-]
 
 main();

@@ -1,5 +1,8 @@
 function main(){
-	var items = ['can'];
+	var items = [];
+	for (i = 0; i < items_data.length; i++){
+		items[i] = items_data[i]["name"];
+	}
 
 
 	$('#query').typeahead({        
@@ -14,9 +17,20 @@ function main(){
 
 		console.log("submitted");
 
-		var query = $('#query').val();
+		var item_name = $('#query').val();
+		var query;
+		var valid = false;
 
-		if(items.indexOf(query) != -1) {
+		for (i = 0; i < items_data.length; i++){
+			if(items_data[i]["name"] == item_name){
+				query = items_data[i]["id"];
+				valid = true;
+				break;
+			}
+			
+		}
+
+		if(valid) {
 			// we have the item they searched for, so navigate to page
 			window.location.href = "item.html?item=" + query;
 		} else {
