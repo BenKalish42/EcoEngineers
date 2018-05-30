@@ -26,6 +26,10 @@ body {
   margin: 10px 0;
 }
 
+.item-search-row {
+  cursor: pointer;
+}
+
 .checkbox {
   padding: 0 5px;
 }

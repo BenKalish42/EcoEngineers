@@ -48,15 +48,16 @@ function main() {
 		}
 	});
 
+	// make items clickable
+	$(".item-search-row").click(function() {
+        window.location.href = $(this).data("href");
+    });
+
 	// filter list based on the page they came from
 	var url = window.location.href;
 	var items_name = url.split('?')[1].split("=")[1];
 	var checkboxes = document.getElementsByClassName("filter-buttons")[0].getElementsByTagName("input");
-	// for(i = 0; i < checkboxes.length; i++){
-	// 	if(checkboxes[i].value != items_name){
-	// 		$(checkboxes[i]).prop("checked", false).change();
-	// 	}
-	// }
+
 	var x = 0;
 	var loopArray = function(arr) {
 	    checkCheckbox(arr[x],function(){
@@ -81,14 +82,10 @@ function main() {
 
 	loopArray(checkboxes);
 
+}
 
-	
-
-
-
-
-
-
+function itemPage(id){
+	window.location.href = "item.html?item=" + id;
 }
 
 var items_data = [
